@@ -1,0 +1,21 @@
+{
+  "name": "tree-sitter-actionscript",
+  "version": "0.1.0",
+  "description": "ActionScript grammar for tree-sitter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "parser",
+    "lexer"
+  ],
+  "author": "Jen-Chieh Shen",
+  "license": "MIT",
+  "dependencies": {
+    "nan": "^2.14.2"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.18.0"
+  }
+}
