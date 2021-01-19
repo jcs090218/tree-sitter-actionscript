@@ -10,5 +10,4 @@ ActionScript grammar for [tree-sitter][].
 
 References
 
-* [The ESTree Spec](https://github.com/estree/estree)
-* [The ECMAScript 2015 Spec](http://www.ecma-international.org/ecma-262/6.0/)
+* N/A
