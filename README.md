@@ -10,4 +10,4 @@ ActionScript grammar for [tree-sitter][].
 
 References
 
-* N/A
+* [ActionScript 3 Language Specification](https://github.com/as3lang/ActionScript3/wiki/Specification)
