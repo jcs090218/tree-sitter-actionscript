@@ -2,9 +2,7 @@
 Imports
 ============================================
 
-func x() int {
-  return 1;
-}
+import flash.text.TextField;
 
 ----
 
