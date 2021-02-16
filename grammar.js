@@ -33,6 +33,7 @@ const PREC = {
   MEMBER: 14
 };
 
+
 module.exports = grammar({
   name: 'actionscript',
 
