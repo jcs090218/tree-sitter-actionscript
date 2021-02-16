@@ -33,6 +33,7 @@ const PREC = {
   MEMBER: 14
 };
 
+// Magit comment test..
 module.exports = grammar({
   name: 'actionscript',
 
