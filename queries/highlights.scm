@@ -26,7 +26,6 @@
  "import"
  "in"
  "instanceof"
- "let"
  "new"
  "of"
  "return"
