@@ -1,8 +1,7 @@
 tree-sitter-actionscript
 ===========================
 
-[![Build Status](https://travis-ci.com/jcs-workspace/tree-sitter-actionscript.svg?branch=master)](https://travis-ci.com/jcs-workspace/tree-sitter-actionscript)
-[![Build status](https://ci.appveyor.com/api/projects/status/42kwnan77rtf8144/branch/master?svg=true)](https://ci.appveyor.com/project/jcs090218/tree-sitter-actionscript/branch/master)
+[![CI](https://github.com/jcs-workspace/tree-sitter-actionscript/actions/workflows/ci.yml/badge.svg)](https://github.com/jcs-workspace/tree-sitter-actionscript/actions/workflows/ci.yml)
 
 ActionScript grammar for [tree-sitter][].
 
