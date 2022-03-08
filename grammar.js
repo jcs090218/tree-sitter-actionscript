@@ -45,84 +45,80 @@ module.exports = grammar({
     super: $ => 'super',
 
     // C Style comment
-    comment: $ => token(prec(PREC.COMMENT, choice(
+    comment: $ => token(choice(
       seq('//', /.*/),
-      seq(
-        '/*',
-        /[^*]*\*+([^/*][^*]*\*+)*/,
-        '/'
-      )))),
+      seq('/*', /[^*]*\*+([^/*][^*]*\*+)*/, '/'))),
 
-    // Declarations
+      // Declarations
 
-    declaration: $ => prec(1, choice(
-      //$.module_declaration,
-      $.package_declaration,
-      $.import_declaration,
-      //$.class_declaration,
-      //$.interface_declaration,
-      //$.annotation_type_declaration,
-      //$.enum_declaration,
-    )),
+      declaration: $ => prec(1, choice(
+        //$.module_declaration,
+        $.package_declaration,
+        $.import_declaration,
+        //$.class_declaration,
+        //$.interface_declaration,
+        //$.annotation_type_declaration,
+        //$.enum_declaration,
+      )),
 
-    package_declaration: $ => seq(
-      repeat($._annotation),
-      'package',
-      $._name,
-      ';'
-    ),
+      package_declaration: $ => seq(
+        repeat($._annotation),
+        'package',
+        $._name,
+        ';'
+      ),
 
-    import_declaration: $ => seq(
-      'import',
-      optional('static'),
-      $._name,
-      optional(seq('.', $.asterisk)),
-      ';'
-    ),
+      import_declaration: $ => seq(
+        'import',
+        optional('static'),
+        $._name,
+        optional(seq('.', $.asterisk)),
+        ';'
+      ),
 
-    // Statements
+      // Statements
 
-    empty_statement: $ => ';',
+      empty_statement: $ => ';',
 
-    _statement: $ => choice(
-      //$.export_statement,
-      //$.import_statement,
-      //$.debugger_statement,
-      //$.expression_statement,
-      //$._declaration,
-      //$.statement_block,
+      _statement: $ => choice(
+        //$.export_statement,
+        //$.import_statement,
+        //$.debugger_statement,
+        //$.expression_statement,
+        //$._declaration,
+        //$.statement_block,
 
-      //$.if_statement,
-      //$.switch_statement,
-      //$.for_statement,
-      //$.for_in_statement,
-      //$.while_statement,
-      //$.do_statement,
-      //$.try_statement,
-      //$.with_statement,
+        //$.if_statement,
+        //$.switch_statement,
+        //$.for_statement,
+        //$.for_in_statement,
+        //$.while_statement,
+        //$.do_statement,
+        //$.try_statement,
+        //$.with_statement,
 
-      //$.break_statement,
-      //$.continue_statement,
-      //$.return_statement,
-      //$.throw_statement,
-      $.empty_statement,
-      //$.labeled_statement
-    ),
+        //$.break_statement,
+        //$.continue_statement,
+        //$.return_statement,
+        //$.throw_statement,
+        $.empty_statement,
+        //$.labeled_statement
+      ),
 
-    statement_block: $ => prec.right(seq(
-      '{',
-      repeat($._statement),
-      '}',
-      optional($.semicolon)
-    )),
+      statement_block: $ => prec.right(seq(
+        '{',
+        repeat($._statement),
+        '}',
+        optional($.semicolon)
+      )),
 
-    function_declaration: $ => prec.right(PREC.DECLARATION, seq(
-      optional('async'),
-      'function',
-      field('name', $.identifier),
-      $._call_signature,
-      field('body', $.statement_block),
-      optional($.semicolon)
-    )),
-  }
-});
+      function_declaration: $ => prec.right(PREC.DECLARATION, seq(
+        optional('async'),
+        'function',
+        field('name', $.identifier),
+        $._call_signature,
+        field('body', $.statement_block),
+        optional($.semicolon)
+      )),
+    }
+                       });
