@@ -4,7 +4,8 @@
   "description": "ActionScript grammar for tree-sitter",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tree-sitter test && script/parse-examples",
+    "test-windows": "tree-sitter test"
   },
   "keywords": [
     "parser",
