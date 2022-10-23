@@ -9,4 +9,5 @@ ActionScript grammar for [tree-sitter][].
 
 References
 
+* [ActionScript® 3.0 Reference](https://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/index.html)
 * [ActionScript 3 Language Specification](https://github.com/as3lang/ActionScript3/wiki/Specification)

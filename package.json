@@ -2,14 +2,10 @@
   "name": "tree-sitter-actionscript",
   "version": "0.1.0",
   "description": "ActionScript grammar for tree-sitter",
-  "main": "index.js",
-  "scripts": {
-    "test": "tree-sitter test && script/parse-examples",
-    "test-windows": "tree-sitter test"
-  },
+  "main": "bindings/node",
   "keywords": [
     "parser",
-    "lexer"
+    "actionscript"
   ],
   "author": "Jen-Chieh Shen",
   "license": "MIT",
@@ -17,6 +13,24 @@
     "nan": "^2.14.2"
   },
   "devDependencies": {
-    "tree-sitter-cli": "^0.18.0"
+    "tree-sitter-cli": "^0.20.6"
+  },
+  "scripts": {
+    "build": "tree-sitter generate && node-gyp rebuild",
+    "test": "tree-sitter test && script/parse-examples",
+    "test-windows": "tree-sitter test",
+    "build-test": "tree-sitter generate && node-gyp build && tree-sitter test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jcs090218/tree-sitter-actionscript.git"
+  },
+  "tree-sitter": [
+    {
+    "scope": "source.as",
+    "file-types": [
+      "as"
+    ]
   }
+  ]
 }

@@ -6,4 +6,4 @@ SET PATH=%PATH%;./node_modules/.bin/
 
 tree-sitter generate
 
-tree-sitter parse ./example-file
+::tree-sitter parse ./example-file
