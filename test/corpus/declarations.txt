@@ -1,0 +1,9 @@
+====================
+package_declaration
+====================
+
+package myVector { }
+
+---
+
+(program (package_declaration (identifier) (block)))

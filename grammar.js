@@ -732,7 +732,7 @@ module.exports = grammar({
       repeat($._annotation),
       'package',
       $._name,
-      ';'
+      field('body', $.block)
     ),
 
     import_declaration: $ => seq(
