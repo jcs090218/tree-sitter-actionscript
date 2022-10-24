@@ -655,7 +655,6 @@ module.exports = grammar({
       $.record_declaration,
       $.interface_declaration,
       $.annotation_type_declaration,
-      $.enum_declaration,
     )),
 
     module_declaration: $ => seq(
@@ -746,34 +745,6 @@ module.exports = grammar({
 
     asterisk: $ => '*',
 
-    enum_declaration: $ => seq(
-      optional($.modifiers),
-      'enum',
-      field('name', $.identifier),
-      field('interfaces', optional($.super_interfaces)),
-      field('body', $.enum_body)
-    ),
-
-    enum_body: $ => seq(
-      '{',
-      commaSep($.enum_constant),
-      optional(','),
-      optional($.enum_body_declarations),
-      '}'
-    ),
-
-    enum_body_declarations: $ => seq(
-      ';',
-      repeat($._class_body_declaration)
-    ),
-
-    enum_constant: $ => (seq(
-      optional($.modifiers),
-      field('name', $.identifier),
-      field('arguments', optional($.argument_list)),
-      field('body', optional($.class_body))
-    )),
-
     class_declaration: $ => seq(
       optional($.modifiers),
       'class',
@@ -844,12 +815,11 @@ module.exports = grammar({
     _class_body_declaration: $ => choice(
       $.field_declaration,
       $.record_declaration,
-      $.method_declaration,
+      $.function_declaration,
       $.compact_constructor_declaration, // For records.
       $.class_declaration,
       $.interface_declaration,
       $.annotation_type_declaration,
-      $.enum_declaration,
       $.block,
       $.static_initializer,
       $.constructor_declaration,
@@ -940,7 +910,6 @@ module.exports = grammar({
         $.constant_declaration,
         $.class_declaration,
         $.interface_declaration,
-        $.enum_declaration,
         $.annotation_type_declaration
       )),
       '}'
@@ -980,8 +949,7 @@ module.exports = grammar({
       '{',
       repeat(choice(
         $.constant_declaration,
-        $.enum_declaration,
-        $.method_declaration,
+        $.function_declaration,
         $.class_declaration,
         $.interface_declaration,
         $.record_declaration,
@@ -1092,17 +1060,17 @@ module.exports = grammar({
 
     void_type: $ => 'void',
 
-    _method_header: $ => seq(
+    _function_header: $ => seq(
       optional(seq(
         field('type_parameters', $.type_parameters),
         repeat($._annotation)
       )),
       field('type', $._unannotated_type),
-      $._method_declarator,
+      $._function_declarator,
       optional($.throws)
     ),
 
-    _method_declarator: $ => seq(
+    _function_declarator: $ => seq(
       field('name', choice($.identifier, $._reserved_identifier)),
       field('parameters', $.formal_parameters),
       field('dimensions', optional($.dimensions))
@@ -1146,9 +1114,9 @@ module.exports = grammar({
       ';'
     ),
 
-    method_declaration: $ => seq(
+    function_declaration: $ => seq(
       optional($.modifiers),
-      $._method_header,
+      $._function_header,
       choice(field('body', $.block), ';')
     ),
 

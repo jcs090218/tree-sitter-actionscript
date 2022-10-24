@@ -142,10 +142,6 @@
         "named": true
       },
       {
-        "type": "enum_declaration",
-        "named": true
-      },
-      {
         "type": "import_declaration",
         "named": true
       },
@@ -485,10 +481,6 @@
         },
         {
           "type": "constant_declaration",
-          "named": true
-        },
-        {
-          "type": "enum_declaration",
           "named": true
         },
         {
@@ -1124,19 +1116,15 @@
           "named": true
         },
         {
-          "type": "enum_declaration",
-          "named": true
-        },
-        {
           "type": "field_declaration",
           "named": true
         },
         {
-          "type": "interface_declaration",
+          "type": "function_declaration",
           "named": true
         },
         {
-          "type": "method_declaration",
+          "type": "interface_declaration",
           "named": true
         },
         {
@@ -1607,172 +1595,6 @@
     }
   },
   {
-    "type": "enum_body",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "enum_body_declarations",
-          "named": true
-        },
-        {
-          "type": "enum_constant",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "enum_body_declarations",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "annotation_type_declaration",
-          "named": true
-        },
-        {
-          "type": "block",
-          "named": true
-        },
-        {
-          "type": "class_declaration",
-          "named": true
-        },
-        {
-          "type": "compact_constructor_declaration",
-          "named": true
-        },
-        {
-          "type": "constructor_declaration",
-          "named": true
-        },
-        {
-          "type": "enum_declaration",
-          "named": true
-        },
-        {
-          "type": "field_declaration",
-          "named": true
-        },
-        {
-          "type": "interface_declaration",
-          "named": true
-        },
-        {
-          "type": "method_declaration",
-          "named": true
-        },
-        {
-          "type": "record_declaration",
-          "named": true
-        },
-        {
-          "type": "static_initializer",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "enum_constant",
-    "named": true,
-    "fields": {
-      "arguments": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "argument_list",
-            "named": true
-          }
-        ]
-      },
-      "body": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "class_body",
-            "named": true
-          }
-        ]
-      },
-      "name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "identifier",
-            "named": true
-          }
-        ]
-      }
-    },
-    "children": {
-      "multiple": false,
-      "required": false,
-      "types": [
-        {
-          "type": "modifiers",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "enum_declaration",
-    "named": true,
-    "fields": {
-      "body": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "enum_body",
-            "named": true
-          }
-        ]
-      },
-      "interfaces": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "super_interfaces",
-            "named": true
-          }
-        ]
-      },
-      "name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "identifier",
-            "named": true
-          }
-        ]
-      }
-    },
-    "children": {
-      "multiple": false,
-      "required": false,
-      "types": [
-        {
-          "type": "modifiers",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "explicit_constructor_invocation",
     "named": true,
     "fields": {
@@ -2106,6 +1928,94 @@
     }
   },
   {
+    "type": "function_declaration",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "block",
+            "named": true
+          }
+        ]
+      },
+      "dimensions": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "dimensions",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "parameters": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "formal_parameters",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "_unannotated_type",
+            "named": true
+          }
+        ]
+      },
+      "type_parameters": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "type_parameters",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "annotation",
+          "named": true
+        },
+        {
+          "type": "marker_annotation",
+          "named": true
+        },
+        {
+          "type": "modifiers",
+          "named": true
+        },
+        {
+          "type": "throws",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "generic_type",
     "named": true,
     "fields": {},
@@ -2264,15 +2174,11 @@
           "named": true
         },
         {
-          "type": "enum_declaration",
+          "type": "function_declaration",
           "named": true
         },
         {
           "type": "interface_declaration",
-          "named": true
-        },
-        {
-          "type": "method_declaration",
           "named": true
         },
         {
@@ -2453,94 +2359,6 @@
           }
         ]
       }
-    }
-  },
-  {
-    "type": "method_declaration",
-    "named": true,
-    "fields": {
-      "body": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "block",
-            "named": true
-          }
-        ]
-      },
-      "dimensions": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "dimensions",
-            "named": true
-          }
-        ]
-      },
-      "name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "identifier",
-            "named": true
-          }
-        ]
-      },
-      "parameters": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "formal_parameters",
-            "named": true
-          }
-        ]
-      },
-      "type": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "_unannotated_type",
-            "named": true
-          }
-        ]
-      },
-      "type_parameters": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "type_parameters",
-            "named": true
-          }
-        ]
-      }
-    },
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "annotation",
-          "named": true
-        },
-        {
-          "type": "marker_annotation",
-          "named": true
-        },
-        {
-          "type": "modifiers",
-          "named": true
-        },
-        {
-          "type": "throws",
-          "named": true
-        }
-      ]
     }
   },
   {
@@ -4061,10 +3879,6 @@
   },
   {
     "type": "else",
-    "named": false
-  },
-  {
-    "type": "enum",
     "named": false
   },
   {
