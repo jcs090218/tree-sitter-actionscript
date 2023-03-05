@@ -7,3 +7,13 @@ package myVector { }
 ---
 
 (program (package_declaration (identifier) (block)))
+
+====================
+unnamed_package
+====================
+
+package { }
+
+---
+
+(program (package_declaration (block)))

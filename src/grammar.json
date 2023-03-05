@@ -4802,8 +4802,16 @@
           "value": "package"
         },
         {
-          "type": "SYMBOL",
-          "name": "_name"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_name"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         },
         {
           "type": "FIELD",
