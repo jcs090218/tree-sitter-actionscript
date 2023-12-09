@@ -1,10 +1,7 @@
 /**
- * $File: grammar.js $
- * $Date: 2021-01-13 20:59:33 $
- * $Revision: $
- * $Creator: Jen-Chieh Shen $
- * $Notice: See LICENSE.txt for modification and distribution information
- *                   Copyright © 2021 by Shen, Jen-Chieh $
+ * @file ActionScript grammar for tree-sitter
+ * @author Jen-Chieh Shen
+ * @license MIT
  */
 
 const DIGITS = token(sep1(/[0-9]+/, /_+/));
