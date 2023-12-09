@@ -1,0 +1,23 @@
+===============
+string literals
+===============
+
+"";
+"\"";
+"This is a string";
+"'";
+
+---
+
+(program
+      (expression_statement
+        (string_literal))
+      (expression_statement
+        (string_literal
+          (escape_sequence)))
+      (expression_statement
+        (string_literal
+          (string_fragment)))
+      (expression_statement
+        (string_literal
+          (string_fragment))))
