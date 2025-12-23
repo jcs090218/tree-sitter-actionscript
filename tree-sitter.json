@@ -1,0 +1,42 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "tree_sitter_actionscript",
+      "camelcase": "TreeSitterActionscript",
+      "title": "TreeSitterActionscript",
+      "scope": "source.tree_sitter_actionscript",
+      "file-types": [
+        "tree_sitter_actionscript"
+      ],
+      "injection-regex": "^tree_sitter_actionscript$",
+      "class-name": "TreeSitterTreeSitterActionscript"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "ActionScript grammar for tree-sitter",
+    "authors": [
+      {
+        "name": "Jen-Chieh Shen",
+        "email": "jcs090218@gmail.com",
+        "url": "https://jcs-profile.com/"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/jcs090218/tree-sitter-actionscript",
+      "funding": "https://github.com/sponsors/jcs090218"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "java": false,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true,
+    "zig": false
+  }
+}
