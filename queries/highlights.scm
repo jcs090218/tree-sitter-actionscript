@@ -1,44 +1,9 @@
-(comment) @comment
+; Comments
+[
+  (line_comment)
+  (block_comment)
+] @comment @spell
 
 [
- "as"
- "async"
- "await"
- "break"
- "case"
- "catch"
- "class"
- "const"
- "continue"
- "debugger"
- "default"
- "delete"
- "do"
- "else"
- "export"
- "extends"
- "finally"
- "for"
- "from"
- "function"
- "get"
- "if"
- "import"
- "in"
- "instanceof"
- "new"
- "of"
- "return"
- "set"
- "static"
- "switch"
- "target"
- "throw"
- "try"
- "typeof"
- "var"
- "void"
- "while"
- "with"
- "yield"
+ (class_attribut)
  ] @keyword

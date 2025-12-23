@@ -1,3 +1,5 @@
+_test/
+
 Cargo.lock
 node_modules
 .node-version
