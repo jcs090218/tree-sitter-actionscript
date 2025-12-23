@@ -1,37 +1,32 @@
-====
-comment
-====
+=============
+line_comments
+=============
 
-// This is a comment
-/* This is also a comment */
-/* this comment /* // /** ends here: */
-/**/
-
-a /* dkjfhsdf + */ + b; /* ***** */
-
----
-
-(program 
-  (line_comment) 
-  (block_comment) 
-  (block_comment) 
-  (block_comment) 
-  (expression_statement 
-    (binary_expression 
-      (identifier) 
-      (block_comment) 
-      (identifier))) 
-  (block_comment)) 
-
-======================
-comments and literals
-======================
-
-123;
-// comment
+// Hello, world!
+// Hello there, general Kenobi.
 
 ---
 
 (program
-  (expression_statement (decimal_integer_literal))
-  (line_comment))
+    (line_comment)
+    (line_comment)
+)
+
+==============
+block_comments
+==============
+
+/* This is a block comment
+such wow
+amazing */
+
+/* I am impressed
+// by the block comments
+capacities */
+
+---
+
+(program
+    (block_comment)
+    (block_comment)
+)
