@@ -6,4 +6,11 @@
 
 [
  (class_attribut)
+ (interface_attribut)
+ "function"
+ "get"
+ "set"
+ "extends"
+ "interface"
+ "namespace"
  ] @keyword
